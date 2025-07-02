@@ -1,22 +1,19 @@
-
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
-namespace DemoMVC.Controllers
+namespace Employee.Controllers
 {
-    public class HelloWorldController : Controller
+    public class EmployeeController : Controller
     {
-        //GET:/HelloWorld/
+       
         public IActionResult Index()
         {
             return View();
         }
 
-        //GET:/HelloWorld/Welcome/
-        public string Welcome()
+     
+        public string Employee()
         {
             return "this is the Welcome action method";
         }
     }
-
-    
 }
