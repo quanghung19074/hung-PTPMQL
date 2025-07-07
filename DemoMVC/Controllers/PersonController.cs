@@ -1,22 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
-using MvcMovie.Models; 
+using MvcMovie.Models;
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+
+
 
 namespace MvcMovie.Controllers
 {
     public class PersonController : Controller
     {
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return View();
+        private readonly ApplicationDbcontext _context;
+        public PersonController(ApplicationDbcontext context) {
+            
         }
-
+        public async Task<IActionResult> Index()
+        public IActionResult Create()
         [HttpPost]
-         public IActionResult Index(Person ps)
-        {
-            string strOutput = "Xin chào " + ps.PersonId + " - " + ps.FullName + " - " + ps.Address;
-            ViewBag.infoPerson = strOutput;
-            return View();
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("PersonId", TypeFullNameComparer, AddressFamily")] Person person )
+        public async Task 
         }
-    }
 }
