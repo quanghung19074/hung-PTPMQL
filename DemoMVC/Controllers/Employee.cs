@@ -1,19 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
-namespace Employee.Controllers
+using MvcMovie.Models;
+namespace MvcMovie.Controllers
 {
     public class EmployeeController : Controller
     {
-       
+       [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-     
-        public string Employee()
+        [HttpPost]
+        public IActionResult Index(Employee employee)
         {
-            return "this is the Welcome action method";
+            ViewBag.EmployeeId = employee.EmployeeId;
+            ViewBag.FullName = employee.FullName;
+            ViewBag.Age = employee.Age;
+            return View();
         }
     }
 }

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 namespace DemoMvc.Controllers
 {
-    public class PersonController : Controller
+    public class DemoPersonController : Controller
     {
        
         public IActionResult Index()

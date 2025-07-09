@@ -8,20 +8,29 @@ using MvcMovie.Data;
 
 namespace DemoMVC.Migrations
 {
-    [DbContext(typeof(ApplicationDbcontext))]
-    partial class ApplicationDbcontextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ApplicationDbContext))]
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.6");
 
-            modelBuilder.Entity("MvcMovie.Models.Person", b =>
+            modelBuilder.Entity("MvcMovie.Models.Employee", b =>
                 {
                     b.Property<string>("PersonId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Address")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EmployeeId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FullName")
