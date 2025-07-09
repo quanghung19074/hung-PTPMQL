@@ -1,0 +1,28 @@
+@model MvcMovie.Models.Employee
+
+<h2>Nhập thông tin nhân viên</h2>
+
+<form asp-action="Index" method="post">
+    <div>
+        <label>Employee ID:</label>
+        <input asp-for="EmployeeId" />
+    </div>
+    <div>
+        <label>Full Name:</label>
+        <input asp-for="FullName" />
+    </div>
+    
+    <div>
+        <label>Age:</label>
+        <input asp-for="Age" />
+    </div>
+    <button type="submit">Gửi dữ liệu</button>
+</form>
+
+@if (ViewBag.EmployeeId != null)
+{
+    <h3>Thông tin nhân viên:</h3>
+    <p><strong>ID:</strong> @ViewBag.EmployeeId</p>
+    <p><strong>Họ tên:</strong> @ViewBag.FullName</p>
+    <p><strong>Tuổi:</strong> @ViewBag.Age</p>
+}
