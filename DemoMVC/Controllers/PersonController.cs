@@ -3,9 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
 using DemoMVC.Data;
 
+
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Identity;
 using DemoMVC;
-using MvcMovie.Models.Process;
+using DemoMVC.Models.Process;
 using System.Data;
 
 
@@ -15,6 +16,10 @@ namespace MvcMovie.Controllers
     {
         private readonly ApplicationDbContext _context;
         private ExcelProcess _excelProcess = new ExcelProcess();
+
+        public string? PersonId { get; private set; }
+        public string? FullName { get; private set; }
+        public string? Address { get; private set; }
 
         public PersonController(ApplicationDbContext context)
         {
@@ -38,6 +43,10 @@ namespace MvcMovie.Controllers
             return View();
         }
 
+        public IActionResult Upload()
+        {
+            return View();
+        }
 
         [HttpPost]
 [ValidateAntiForgeryToken]
@@ -54,39 +63,35 @@ public async Task<IActionResult> Upload(IFormFile file)// cơ chế xử lý b�
         {
             var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads/Excels", fileName);
+            var fileLocation = new FileInfo(filePath).ToString();
             using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await file.CopyToAsync(stream);
-            }
+                    {
+                        await file.CopyToAsync(stream);
+                    }
 
             // Gọi ExcelProcess để đọc dữ liệu từ file Excel
             DataTable dt = _excelProcess.ExcelToDataTable(filePath);
 
-            // Duyệt từng dòng trong DataTable và thêm vào DbContext
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                        var person = new Person
+                    // Duyệt từng dòng trong DataTable và thêm vào DbContext
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        var person = new Person();
                         {
-                            PersonId = dt.Rows[i][0].ToString(),
-                            FullName = dt.Rows[i][1].ToString(),
-                            Address = dt.Rows[i][2].ToString(),
-
+                            PersonId = dt.Rows[i][0].ToString();
+                            FullName = dt.Rows[i][1].ToString();
+                            Address = dt.Rows[i][2].ToString();
+                        
+                            _context.Add(person);
                         };
 
-                // Kiểm tra nếu chưa tồn tại thì mới thêm
-                if (!_context.Person.Any(p => p.PersonId == person.PersonId))
-                {
-                    _context.Person.Add(person);
-                }
-            }
+                        // Kiểm tra nếu chưa tồn tại thì mới thêm
+                    }
 
             await _context.SaveChangesAsync();
-            ViewBag.Message = "Upload and import successful!";
+                    return RedirectToAction(nameof(Index));
+           
         }
-    }
-    else
-    {
-        ModelState.AddModelError("", "Please upload a file.");
+   
     }
 
     return View();
@@ -109,7 +114,7 @@ public async Task<IActionResult> Upload(IFormFile file)// cơ chế xử lý b�
 
             return View(person);
         }
-
+      
 
         [HttpPost]
         [ValidateAntiForgeryToken]

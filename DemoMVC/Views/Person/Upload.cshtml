@@ -1,0 +1,15 @@
+@model IEnumerable<MvcMovie.Models.Person>
+@{
+    ViewData["Title"] = "Upload Excel File";
+}
+
+<h2>Upload Excel File</h2>
+
+<form asp-action="Upload" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label for="file">Chọn file Excel:</label>
+        <input type="file" name="file" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
