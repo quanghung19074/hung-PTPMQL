@@ -386,6 +386,7 @@ C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Azure.Core.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Azure.Identity.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\EPPlus.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\EPPlus.Interfaces.dll
+C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\EPPlus.System.Drawing.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Humanizer.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -416,16 +417,10 @@ C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.EntityFram
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.Configuration.FileExtensions.dll
-C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Json.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Physical.dll
-C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
@@ -448,6 +443,7 @@ C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.VisualStud
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Mono.TextTemplating.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\NuGet.Common.dll
@@ -470,13 +466,12 @@ C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Composition.H
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Composition.Runtime.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Composition.TypedParts.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Drawing.Common.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Memory.Data.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Reflection.MetadataLoadContext.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Runtime.Caching.dll
-C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\System.Security.Cryptography.Xml.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\af\Humanizer.resources.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\ar\Humanizer.resources.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\az\Humanizer.resources.dll
@@ -635,6 +630,7 @@ C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win-arm\nat
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\linux-arm\native\libe_sqlite3.so
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\linux-arm64\native\libe_sqlite3.so
@@ -656,8 +652,8 @@ C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win-arm\nat
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\obj\Debug\net9.0\DemoMVC.csproj.AssemblyReference.cache
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\obj\Debug\net9.0\rpswa.dswa.cache.json
 C:\Users\ADMIN\Desktop\hung-PTPMQL\DemoMVC\obj\Debug\net9.0\DemoMVC.GeneratedMSBuildEditorConfig.editorconfig

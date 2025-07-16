@@ -2,12 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
 using DemoMVC.Data;
-
-
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Identity;
 using DemoMVC;
 using DemoMVC.Models.Process;
 using System.Data;
+using OfficeOpenXml;
 
 
 namespace MvcMovie.Controllers
@@ -49,54 +48,59 @@ namespace MvcMovie.Controllers
         }
 
         [HttpPost]
-[ValidateAntiForgeryToken]
-public async Task<IActionResult> Upload(IFormFile file)// cơ chế xử lý bất đồng bộ 
-{
-    if (file != null)
-    {
-        string fileExtension = Path.GetExtension(file.FileName);
-        if (fileExtension != ".xls" && fileExtension != ".xlsx")
+        [ValidateAntiForgeryToken]
+        [Obsolete]
+        public async Task<IActionResult> Upload(IFormFile file)// cơ chế xử lý bất đồng bộ 
         {
-            ModelState.AddModelError("", "Please choose an Excel file to upload!");
-        }
-        else
-        {
-            var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads/Excels", fileName);
-            var fileLocation = new FileInfo(filePath).ToString();
-            using (var stream = new FileStream(filePath, FileMode.Create))
+            if (file != null)
+            {
+                string fileExtension = Path.GetExtension(file.FileName);
+                if (fileExtension != ".xls" && fileExtension != ".xlsx")
+                {
+                    ModelState.AddModelError("", "Please choose an Excel file to upload!");
+                }
+                else
+                {
+                    var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads", "Excels");
+Directory.CreateDirectory(folderPath);
+                    var fileName = DateTime.Now.ToString("yyyyMMdd_HHmmss") + Path.GetExtension(file.FileName);
+                    var filePath = Path.Combine(folderPath, fileName);
+                    
+                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
-                    }
 
-            // Gọi ExcelProcess để đọc dữ liệu từ file Excel
-            DataTable dt = _excelProcess.ExcelToDataTable(filePath);
 
-                    // Duyệt từng dòng trong DataTable và thêm vào DbContext
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        var person = new Person();
+                        // Gọi ExcelProcess để đọc dữ liệu từ file Excel
+                        var dt = _excelProcess.ExcelToDataTable(filePath);
+
+                        // Duyệt từng dòng trong DataTable và thêm vào DbContext
+                        for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            PersonId = dt.Rows[i][0].ToString();
-                            FullName = dt.Rows[i][1].ToString();
-                            Address = dt.Rows[i][2].ToString();
-                        
-                            _context.Add(person);
-                        };
+                            var ps = new Person();
 
-                        // Kiểm tra nếu chưa tồn tại thì mới thêm
+                            ps.PersonId = dt.Rows[i][0].ToString();
+                            ps.FullName = dt.Rows[i][1].ToString();
+                            ps.Address = dt.Rows[i][2].ToString();
+
+                            _context.Add(ps);
+
+
+
+                            // Kiểm tra nếu chưa tồn tại thì mới thêm
+                        }
+
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
                     }
+                }
 
-            await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-           
+            }
+
+            return View();
         }
-   
-    }
 
-    return View();
-}
-
+       
 
 
         public async Task<IActionResult> Edit(string id)
@@ -114,7 +118,7 @@ public async Task<IActionResult> Upload(IFormFile file)// cơ chế xử lý b�
 
             return View(person);
         }
-      
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -149,6 +153,32 @@ public async Task<IActionResult> Upload(IFormFile file)// cơ chế xử lý b�
             return View(person);
         }
 
+
+ public IActionResult Download()
+{
+    // Name the file when downloading
+    var fileName = "YourFileName" + ".xlsx";
+    using (ExcelPackage excelPackage = new ExcelPackage())
+    {
+        ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+
+        // add some text to cell A1
+        worksheet.Cells["A1"].Value = "PersonID";
+        worksheet.Cells["B1"].Value = "FullName";
+        worksheet.Cells["C1"].Value = "Address";
+
+        // get all Person
+        var personList = _context.Person.ToList();
+
+        // fill data to worksheet
+        worksheet.Cells["A2"].LoadFromCollection(personList);
+
+        var stream = new MemoryStream(excelPackage.GetAsByteArray());
+
+        // download file
+        return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+    }
+}
 
         public async Task<IActionResult> Delete(string id)
         {
@@ -190,5 +220,6 @@ public async Task<IActionResult> Upload(IFormFile file)// cơ chế xử lý b�
         {
             return (_context.Person?.Any(e => e.PersonId == id)).GetValueOrDefault();
         }
+        
     }
 }
